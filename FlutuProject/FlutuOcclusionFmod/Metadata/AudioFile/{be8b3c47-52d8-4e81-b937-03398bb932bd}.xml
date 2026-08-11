@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{be8b3c47-52d8-4e81-b937-03398bb932bd}">
+		<property name="assetPath">
+			<value>Crowds, Walla, Sandwich Street Vendor, Pedestrian Street, Voices, Noisy, Traffic SND80374.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>96</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>209.03999999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{d7ea0eed-c1d1-4adc-8bb7-e3a99a7015d9}</destination>
+		</relationship>
+	</object>
+</objects>

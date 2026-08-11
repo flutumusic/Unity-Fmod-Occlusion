@@ -1,0 +1,189 @@
+### Unity
+
+# Unity generated folders
+**/[Ll]ibrary/
+**/[Tt]emp/
+**/[Oo]bj/
+**/[Bb]uild/
+**/[Bb]uilds/
+**/[Ll]ogs/
+**/[Uu]ser[Ss]ettings/
+**/[Mm]emory[Cc]aptures/
+**/[Rr]ecordings/
+
+# Asset metadata
+!**/[Aa]ssets/**/*.meta
+
+# Unity crash reports
+sysinfo.txt
+
+# Unity build outputs
+*.apk
+*.aab
+*.unitypackage
+
+# Unity auto-generated project files
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.tmp
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.mdb
+*.opendb
+*.VC.db
+
+
+### FMOD for Unity
+
+# Keep FMOD Unity integration
+!**/[Aa]ssets/Plugins/FMOD/
+!**/[Aa]ssets/Plugins/FMOD/**/
+
+# Keep FMOD native libraries
+!**/[Aa]ssets/Plugins/FMOD/**/lib/*
+!**/[Aa]ssets/Plugins/FMOD/**/lib/**/*.dll
+!**/[Aa]ssets/Plugins/FMOD/**/lib/**/*.so
+!**/[Aa]ssets/Plugins/FMOD/**/lib/**/*.dylib
+!**/[Aa]ssets/Plugins/FMOD/**/lib/**/*.bundle
+
+# Keep FMOD Editor resources
+!**/[Aa]ssets/Gizmos/FMOD/*
+!**/[Aa]ssets/Editor Default Resources/FMOD/*
+
+# FMOD cache
+**/[Aa]ssets/Plugins/FMOD/Cache/
+**/[Aa]ssets/Plugins/FMOD/Cache/**
+
+# FMOD editor logs
+fmod_editor.log
+
+# FMOD bank files
+# Keep these ignored if banks are generated locally.
+# Remove these lines if you want to version-control compiled FMOD banks.
+**/[Aa]ssets/StreamingAssets/**/*.bank
+**/[Aa]ssets/StreamingAssets/**/*.bank.meta
+
+
+### Visual Studio
+
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+
+### Visual Studio Code
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+
+### JetBrains Rider / IntelliJ
+
+.idea/
+*.sln.iml
+
+
+### Windows
+
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+
+### macOS
+
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+._*
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+
+### C# / .NET
+
+**/[Bb]in/
+**/[Oo]bj/
+artifacts/
+publish/
+
+*.nupkg
+**/[Pp]ackages/*
+!**/[Pp]ackages/build/
+
+
+### C / C++
+
+*.o
+*.obj
+*.gch
+*.pch
+
+*.so
+*.dylib
+
+*.a
+*.lib
+
+*.exe
+*.out
+
+*.ilk
+*.map
+*.exp
+
+*.idb
+*.pdb
+*.dSYM/
+
+
+### Xcode / Objective-C
+
+xcuserdata/
+DerivedData/
+
+*.hmap
+*.ipa
+*.dSYM.zip
+*.dSYM
+
+timeline.xctimeline
+playground.xcworkspace
+
+
+### Misc temporary files
+
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.orig
+*.log
+
+.history/
+
+# Large local source audio
+**/Crowds, Walla, Sandwich Street Vendor, Pedestrian Street, Voices, Noisy, Traffic SND80374.wav
