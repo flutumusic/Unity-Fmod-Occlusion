@@ -63,12 +63,6 @@ sysinfo.txt
 # FMOD editor logs
 fmod_editor.log
 
-# FMOD bank files
-# Keep these ignored if banks are generated locally.
-# Remove these lines if you want to version-control compiled FMOD banks.
-**/[Aa]ssets/StreamingAssets/**/*.bank
-**/[Aa]ssets/StreamingAssets/**/*.bank.meta
-
 
 ### Visual Studio
 
