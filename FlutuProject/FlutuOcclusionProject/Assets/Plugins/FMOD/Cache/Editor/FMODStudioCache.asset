@@ -19,7 +19,7 @@ MonoBehaviour:
     Data3: 317890954
     Data4: 1448955512
   Banks:
-  - {fileID: 8993976327266151956}
+  - {fileID: -2595056177378460251}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -28,6 +28,66 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 50
   Length: 209040
+--- !u!114 &-6162852131582763353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.assets.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: ../FlutuOcclusionFmod/Build/Desktop/Master.assets.bank
+  Name: Master.assets
+  StudioPath: bank:/Master.assets
+  lastModified: 639225911204855777
+  FileSizes:
+  - Name: Desktop
+    Value: 506
+  Exists: 1
+--- !u!114 &-4032091912899752954
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Bank B.assets.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: ../FlutuOcclusionFmod/Build/Desktop/Bank B.assets.bank
+  Name: Bank B.assets
+  StudioPath: bank:/Bank B.assets
+  lastModified: 639225911205408280
+  FileSizes:
+  - Name: Desktop
+    Value: 11638752
+  Exists: 1
+--- !u!114 &-2595056177378460251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Bank B.bank
+  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
+  Path: ../FlutuOcclusionFmod/Build/Desktop/Bank B.bank
+  Name: Bank B
+  StudioPath: bank:/Bank B
+  lastModified: 639225911204896014
+  FileSizes:
+  - Name: Desktop
+    Value: 3128
+  Exists: 1
 --- !u!114 &-1663190873231077996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +127,9 @@ MonoBehaviour:
   EditorBanks:
   - {fileID: 2122445962869575826}
   - {fileID: 4267242234684341700}
-  - {fileID: 8993976327266151956}
+  - {fileID: -4032091912899752954}
+  - {fileID: -2595056177378460251}
+  - {fileID: -6162852131582763353}
   EditorEvents:
   - {fileID: -7825501035632617391}
   EditorParameters: []
@@ -76,7 +138,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 2122445962869575826}
   cacheVersion: 131859
-  cacheTime: 639225906746117750
+  cacheTime: 639225911205408280
   SerializableEventsDict:
   - key: event:/FlutuOcclusionEvent
     index: 0
@@ -95,10 +157,10 @@ MonoBehaviour:
   Path: ../FlutuOcclusionFmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639225888353377698
+  lastModified: 639225911204855777
   FileSizes:
   - Name: Desktop
-    Value: 880
+    Value: 978
   Exists: 1
 --- !u!114 &4267242234684341700
 MonoBehaviour:
@@ -115,28 +177,8 @@ MonoBehaviour:
   Path: ../FlutuOcclusionFmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639225888353367695
+  lastModified: 639225911204850736
   FileSizes:
   - Name: Desktop
     Value: 1074
-  Exists: 1
---- !u!114 &8993976327266151956
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Bank A.bank
-  m_EditorClassIdentifier: FMODUnityEditor::FMODUnity.EditorBankRef
-  Path: ../FlutuOcclusionFmod/Build/Desktop/Bank A.bank
-  Name: Bank A
-  StudioPath: bank:/Bank A
-  lastModified: 639225906746117750
-  FileSizes:
-  - Name: Desktop
-    Value: 11641376
   Exists: 1
