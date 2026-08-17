@@ -41,29 +41,6 @@ sysinfo.txt
 
 ### FMOD for Unity
 
-# Keep FMOD Unity integration
-!**/[Aa]ssets/Plugins/FMOD/
-!**/[Aa]ssets/Plugins/FMOD/**/
-
-# Keep FMOD native libraries
-!**/[Aa]ssets/Plugins/FMOD/**/lib/*
-!**/[Aa]ssets/Plugins/FMOD/**/lib/**/*.dll
-!**/[Aa]ssets/Plugins/FMOD/**/lib/**/*.so
-!**/[Aa]ssets/Plugins/FMOD/**/lib/**/*.dylib
-!**/[Aa]ssets/Plugins/FMOD/**/lib/**/*.bundle
-
-# Keep FMOD Editor resources
-!**/[Aa]ssets/Gizmos/FMOD/*
-!**/[Aa]ssets/Editor Default Resources/FMOD/*
-
-# FMOD cache
-**/[Aa]ssets/Plugins/FMOD/Cache/
-**/[Aa]ssets/Plugins/FMOD/Cache/**
-
-# FMOD editor logs
-fmod_editor.log
-
-
 ### Visual Studio
 
 .vs/
