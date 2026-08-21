@@ -1,0 +1,23 @@
+{
+    "name": "com.flutu.audio",
+    "version": "1.0.0",
+    "displayName": "Flutu Audio System",
+    "description": "FMOD Studio integration for Unity. Dynamic audio occlusion with raycast-based obstacle detection, per-emitter filtering, attack/release smoothing, multi-material composition. Emitter registry, streamlined parameter handling. Production-ready for mobile and console.",
+    "unity": "6000.3",
+    "fmodVersion": "2.03",
+    "keywords": [
+        "audio",
+        "fmod",
+        "sound",
+        "occlusion",
+        "raycast",
+        "sound-design",
+        "games",
+        "middleware"
+    ],
+    "author": {
+        "name": "Flutu",
+        "email": "hello@flutumusic.com",
+        "url": "https://flutumusic.com"
+    }
+}
