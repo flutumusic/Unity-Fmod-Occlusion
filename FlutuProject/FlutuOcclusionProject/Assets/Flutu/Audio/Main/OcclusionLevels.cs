@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace Flutu.Audio
 {
-    public static class AudioOcclusionLevels
+    public static class OcclusionLevels
     {
         public static readonly float low = 0.40f;
         public static readonly float medium = 0.60f;

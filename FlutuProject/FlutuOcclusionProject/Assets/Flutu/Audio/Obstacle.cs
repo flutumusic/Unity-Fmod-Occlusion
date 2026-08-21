@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Flutu.Audio
 {
-    public class AudioObstacle : MonoBehaviour
+    public class Obstacle : MonoBehaviour
     {
-        public static readonly Dictionary<int, AudioObstacle> Registry = new();
+        public static readonly Dictionary<int, Obstacle> Registry = new();
 
         [SerializeField]
         private bool _hasOcclusion = true;
@@ -13,7 +13,7 @@ namespace Flutu.Audio
 
         [SerializeField]
         [Range(0f, 1f)]
-        private float _occlusionValue = AudioOcclusionLevels.low;
+        private float _occlusionValue = OcclusionLevels.low;
         public float occlusionValue => _occlusionValue;
 
         private void Awake()

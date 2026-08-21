@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ../FlutuOcclusionFmod/Build/Desktop/Bank.assets.bank
   Name: Bank.assets
   StudioPath: bank:/Bank.assets
-  lastModified: 639225914939400332
+  lastModified: 639225740928909283
   FileSizes:
   - Name: Desktop
     Value: 11638752
@@ -63,7 +63,7 @@ MonoBehaviour:
   Path: ../FlutuOcclusionFmod/Build/Desktop/Master.assets.bank
   Name: Master.assets
   StudioPath: bank:/Master.assets
-  lastModified: 639225914938907257
+  lastModified: 639225740928918976
   FileSizes:
   - Name: Desktop
     Value: 506
@@ -118,7 +118,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 2122445962869575826}
   cacheVersion: 131859
-  cacheTime: 639225914939400332
+  cacheTime: 639225740928925569
   SerializableEventsDict:
   - key: event:/FlutuOcclusionEvent
     index: 0
@@ -137,7 +137,7 @@ MonoBehaviour:
   Path: ../FlutuOcclusionFmod/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639225914938917297
+  lastModified: 639225740928925569
   FileSizes:
   - Name: Desktop
     Value: 976
@@ -157,7 +157,7 @@ MonoBehaviour:
   Path: ../FlutuOcclusionFmod/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639225914938907257
+  lastModified: 639225740928918976
   FileSizes:
   - Name: Desktop
     Value: 1074
@@ -177,7 +177,7 @@ MonoBehaviour:
   Path: ../FlutuOcclusionFmod/Build/Desktop/Bank.bank
   Name: Bank
   StudioPath: bank:/Bank
-  lastModified: 639225914938962345
+  lastModified: 639225740928918976
   FileSizes:
   - Name: Desktop
     Value: 3128

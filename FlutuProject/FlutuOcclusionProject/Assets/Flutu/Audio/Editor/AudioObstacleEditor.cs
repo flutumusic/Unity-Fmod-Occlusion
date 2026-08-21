@@ -5,8 +5,8 @@ using System.Collections.Generic;
 
 namespace Flutu.Audio.Editor
 {
-    [CustomEditor(typeof(AudioObstacle))]
-    public class AudioObstacleEditor : UnityEditor.Editor
+    [CustomEditor(typeof(Obstacle))]
+    public class ObstacleEditor : UnityEditor.Editor
     {
         private SerializedProperty _hasOcclusionProp;
         private SerializedProperty _occlusionValueProp;
@@ -26,7 +26,7 @@ namespace Flutu.Audio.Editor
             if (_hasOcclusionProp.boolValue)
             {
                 EditorGUI.BeginChangeCheck();
-                float newValue = EditorGUILayout.Slider("AudioOcclusionLevels", _occlusionValueProp.floatValue, 0f, 1f);
+                float newValue = EditorGUILayout.Slider("OcclusionLevels", _occlusionValueProp.floatValue, 0f, 1f);
                 bool changed = EditorGUI.EndChangeCheck();
 
                 if (changed)
@@ -43,10 +43,10 @@ namespace Flutu.Audio.Editor
 
         private float SnapToNearestLevel(float value)
         {
-            float closest = AudioOcclusionLevels.low;
-            float closestDistance = Mathf.Abs(value - AudioOcclusionLevels.low);
+            float closest = OcclusionLevels.low;
+            float closestDistance = Mathf.Abs(value - OcclusionLevels.low);
 
-            foreach (var level in AudioOcclusionLevels.values.Values)
+            foreach (var level in OcclusionLevels.values.Values)
             {
                 float distance = Mathf.Abs(value - level);
                 if (distance < closestDistance)
@@ -63,7 +63,7 @@ namespace Flutu.Audio.Editor
         {
             float closest = SnapToNearestLevel(value);
 
-            foreach (var entry in AudioOcclusionLevels.values)
+            foreach (var entry in OcclusionLevels.values)
             {
                 if (Mathf.Approximately(entry.Value, closest))
                 {
