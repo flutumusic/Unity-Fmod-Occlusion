@@ -20,7 +20,6 @@ sysinfo.txt
 # Unity build outputs
 *.apk
 *.aab
-*.unitypackage
 
 # Unity auto-generated project files
 *.csproj
