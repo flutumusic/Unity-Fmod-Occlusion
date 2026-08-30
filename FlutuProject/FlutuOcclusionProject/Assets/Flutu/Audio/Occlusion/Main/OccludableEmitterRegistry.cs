@@ -2,9 +2,9 @@ using FMODUnity;
 using System;
 using System.Collections.Generic;
 
-namespace Flutu.Audio
+namespace Flutu.Audio.Occlusion
 {
-    public static class EmitterRegistry
+    public static class OccludableEmitterRegistry
     {
         private static readonly HashSet<StudioEventEmitter> emitters = new();
 

@@ -1,11 +1,11 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace Flutu.Audio
+namespace Flutu.Audio.Occlusion
 {
-    public class Obstacle : MonoBehaviour
+    public class Occluder : MonoBehaviour
     {
-        public static readonly Dictionary<int, Obstacle> Registry = new();
+        public static readonly Dictionary<int, Occluder> Registry = new();
 
         [SerializeField]
         private bool _hasOcclusion = true;

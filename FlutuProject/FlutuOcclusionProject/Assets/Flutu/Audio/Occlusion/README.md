@@ -1,13 +1,13 @@
-# Flutu Audio System
+# Flutu Audio Occlusion System
 
 FMOD Studio 2.03 integration for Unity 6+. Production-ready audio occlusion with dynamic filtering, smooth parameter transitions, and zero-overhead emitter registry.
 
 ## Features
 
-- **Raycast-based occlusion** — 5-ray cone pattern (configurable) toward listener
+- **Raycast-based occlusion** — 5-ray spread pattern (configurable) toward listener
 - **Per-emitter max-distance filtering** — uses FMOD Studio event attenuation automatically
-- **EmitterRegistry** — zero-overhead emitter tracking without colliders
-- **Emitter component** — auto-register/unregister on enable/disable
+- **OccludableEmitterRegistry** — zero-overhead emitter tracking without colliders
+- **OccludableEmitter component** — auto-register/unregister on enable/disable
 - **Attack/Release smoothing** — faster close (15f), slower open (4f) prevents flutter on corner rays
 - **Multi-material composition** — obstacles accumulate realistically, rays averaged
 - **Dynamic layer filtering** — raycast only tests relevant collision layers
@@ -19,29 +19,29 @@ FMOD Studio 2.03 integration for Unity 6+. Production-ready audio occlusion with
 
 ### Components to Add to GameObjects
 
-- **Listener** — attach to listener GameObject (script: `Listener.cs`)
+- **OcclusionListener** — attach to listener GameObject (script: `OcclusionListener.cs`)
   - Requires: GameObject with transform (usually Camera)
   - Detects nearby emitters, calls occlusion calculator
   
-- **Emitter** — attach to each sound-emitting GameObject (script: `Emitter.cs`)
+- **OccludableEmitter** — attach to each sound-emitting GameObject (script: `OccludableEmitter.cs`)
   - Requires: GameObject with StudioEventEmitter component
-  - Auto-registers/unregisters with EmitterRegistry
+  - Auto-registers/unregisters with OccludableEmitterRegistry
   
-- **Obstacle** — attach to blocking geometry (script: `Obstacle.cs`)
+- **Occluder** — attach to blocking geometry (script: `Occluder.cs`)
   - Requires: Collider component on the same GameObject
   - Defines occlusion strength (0–1 range in Inspector)
 
 ### Internal Components (Developer Reference)
 
 - **OcclusionCalculator** — raycasting engine, parameter smoothing, registry cleanup
-- **EmitterRegistry** — static registry with change notifications
+- **OccludableEmitterRegistry** — static registry with change notifications
 
 ### How It Works
 
-1. **EmitterRegistry** tracks all active emitters (via `Emitter` component)
-2. **Listener** subscribes to registry changes
+1. **OccludableEmitterRegistry** tracks all active emitters (via `OccludableEmitter` component)
+2. **OcclusionListener** subscribes to registry changes
 3. For each nearby emitter, **OcclusionCalculator**:
-   - Shoots 5 rays in a cone from emitter toward listener
+   - Shoots 5 rays in a spread from emitter toward listener
    - Each ray tests for obstacles and accumulates their occlusion values
    - Center ray early-exits if clear (no occlusion = 0)
    - Averages occlusion across all rays
@@ -50,11 +50,11 @@ FMOD Studio 2.03 integration for Unity 6+. Production-ready audio occlusion with
 
 ## Setup
 
-### 1. Add Listener Component
+### 1. Add OcclusionListener Component
 
-**Where:** Listener GameObject (usually main Camera)
+**Where:** OcclusionListener GameObject (usually main Camera)
 
-Attach `Listener` component (script: `Assets/Flutu/Audio/Listener.cs`).
+Attach `OcclusionListener` component (script: `Assets/Flutu/Audio/OcclusionListener.cs`).
 
 **Requirements:**
 - GameObject must have a Transform component
@@ -64,11 +64,11 @@ Attach `Listener` component (script: `Assets/Flutu/Audio/Listener.cs`).
 - **Occlusion Layer Mask** — which layers to raycast (filter out irrelevant colliders)
 - **Debug Visualize** — shows ray hits in Scene view (red = blocked, green = clear)
 
-### 2. Add Emitter Components
+### 2. Add OccludableEmitter Components
 
 **Where:** Every sound-emitting GameObject
 
-Attach `Emitter` component (script: `Assets/Flutu/Audio/Emitter.cs`) to each GameObject with `StudioEventEmitter`.
+Attach `OccludableEmitter` component (script: `Assets/Flutu/Audio/OccludableEmitter.cs`) to each GameObject with `StudioEventEmitter`.
 
 **Requirements:**
 - Must have `StudioEventEmitter` component on the same GameObject
@@ -78,11 +78,11 @@ Attach `Emitter` component (script: `Assets/Flutu/Audio/Emitter.cs`) to each Gam
 - Just add the component — it auto-registers on enable, auto-unregisters on disable
 - No Inspector configuration needed
 
-### 3. Add Obstacle Components
+### 3. Add Occluder Components
 
 **Where:** Blocking geometry (walls, doors, etc.)
 
-Attach `Obstacle` component (script: `Assets/Flutu/Audio/Obstacle.cs`) to each blocking GameObject.
+Attach `Occluder` component (script: `Assets/Flutu/Audio/Occluder.cs`) to each blocking GameObject.
 
 **Requirements:**
 - Must have a Collider component (Box, Sphere, Capsule, Mesh)
@@ -113,7 +113,7 @@ private const float cleanupInterval = 5f; // dead-emitter cleanup frequency
 
 ### Automatic (Recommended)
 
-Once `Listener` and `Emitter` components are in place, occlusion is calculated every FixedUpdate. No code needed.
+Once `OcclusionListener` and `OccludableEmitter` components are in place, occlusion is calculated every FixedUpdate. No code needed.
 
 ### Manual Query
 
@@ -124,7 +124,7 @@ float occlusion = OcclusionCalculator.GetCurrentOcclusion(emitter);
 
 ### Debug Visualization
 
-1. Select the GameObject with `Listener` component
+1. Select the GameObject with `OcclusionListener` component
 2. Toggle **Debug Visualize** in Inspector
 3. Rays appear in Scene view (update rate = FixedUpdate ~50fps)
 
@@ -149,9 +149,9 @@ Red = blocked, Green = clear
 
 ### No Occlusion Detected
 
-- ✅ `Emitter` component added to emitter GameObject?
-- ✅ Obstacles have colliders?
-- ✅ Obstacles have `Obstacle` component with hasOcclusion enabled?
+- ✅ `OccludableEmitter` component added to emitter GameObject?
+- ✅ Occluders have colliders?
+- ✅ Occluders have `Occluder` component with hasOcclusion enabled?
 - ✅ LayerMask includes obstacle layers?
 - ✅ Debug Visualize shows rays? (Scene view, not Game view)
 

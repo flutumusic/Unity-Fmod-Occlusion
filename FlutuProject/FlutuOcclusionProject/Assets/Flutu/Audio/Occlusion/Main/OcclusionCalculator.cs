@@ -3,7 +3,7 @@ using FMODUnity;
 using System.Collections.Generic;
 using FMOD.Studio;
 
-namespace Flutu.Audio
+namespace Flutu.Audio.Occlusion
 {
     public struct DebugRay
     {
@@ -16,7 +16,7 @@ namespace Flutu.Audio
     public class OcclusionCalculator
     {
         private const int rayCount = 5;
-        private const float coneAngle = 60f;
+        private const float spreadAngle = 60f;
         private static readonly QueryTriggerInteraction triggerInteraction = QueryTriggerInteraction.Ignore;
         private const string occlusionParameterName = "Occlusion";
         private const float attackSpeed = 15f;
@@ -158,7 +158,7 @@ namespace Flutu.Audio
 
         private float[] GetAllOcclusions(int rayIndex, Vector3 emitterPos, Vector3 forward, float rayLength, Transform emitterTransform, Transform listenerTransform)
         {
-            Vector3 rayDirection = GetConeRayDirection(forward, rayIndex);
+            Vector3 rayDirection = GetSpreadRayDirection(forward, rayIndex);
             Vector3 rayEnd = emitterPos + rayDirection * rayLength;
 
             float[] occlusionValues = EvaluateRay(emitterPos, rayEnd, emitterTransform, listenerTransform);
@@ -187,12 +187,12 @@ namespace Flutu.Audio
             return Mathf.Clamp01(sum);
         }
 
-        private Vector3 GetConeRayDirection(Vector3 forward, int rayIndex)
+        private Vector3 GetSpreadRayDirection(Vector3 forward, int rayIndex)
         {
             if (rayCount == 1)
                 return forward;
 
-            float angle = (rayIndex / (float)(rayCount - 1)) * coneAngle - (coneAngle * 0.5f);
+            float angle = (rayIndex / (float)(rayCount - 1)) * spreadAngle - (spreadAngle * 0.5f);
             Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.up);
             return rotation * forward;
         }
@@ -236,10 +236,10 @@ namespace Flutu.Audio
                 if (IsPartOfTransform(hit.collider.transform, listenerTransform))
                     return occlusionValues.ToArray();
 
-                if (!Obstacle.Registry.TryGetValue(hit.collider.GetInstanceID(), out var obstacle))
+                if (!Occluder.Registry.TryGetValue(hit.collider.GetInstanceID(), out var occluder))
                     continue;
 
-                occlusionValues.Add(obstacle.occlusionValue);
+                occlusionValues.Add(occluder.occlusionValue);
             }
 
             return occlusionValues.ToArray();

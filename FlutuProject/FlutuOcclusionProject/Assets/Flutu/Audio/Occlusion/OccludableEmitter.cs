@@ -1,9 +1,9 @@
 using FMODUnity;
 using UnityEngine;
 
-namespace Flutu.Audio
+namespace Flutu.Audio.Occlusion
 {
-    public class Emitter : MonoBehaviour
+    public class OccludableEmitter : MonoBehaviour
     {
         private StudioEventEmitter emitter;
 
@@ -11,13 +11,13 @@ namespace Flutu.Audio
         {
             emitter = GetComponent<StudioEventEmitter>();
             if (emitter != null)
-                EmitterRegistry.Register(emitter);
+                OccludableEmitterRegistry.Register(emitter);
         }
 
         private void OnDisable()
         {
             if (emitter != null)
-                EmitterRegistry.Unregister(emitter);
+                OccludableEmitterRegistry.Unregister(emitter);
         }
     }
 }

@@ -3,10 +3,10 @@ using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
 
-namespace Flutu.Audio.Editor
+namespace Flutu.Audio.Occlusion.Editor
 {
-    [CustomEditor(typeof(Obstacle))]
-    public class ObstacleEditor : UnityEditor.Editor
+    [CustomEditor(typeof(Occluder))]
+    public class OccluderEditor : UnityEditor.Editor
     {
         private SerializedProperty _hasOcclusionProp;
         private SerializedProperty _occlusionValueProp;
@@ -26,7 +26,7 @@ namespace Flutu.Audio.Editor
             if (_hasOcclusionProp.boolValue)
             {
                 EditorGUI.BeginChangeCheck();
-                float newValue = EditorGUILayout.Slider("OcclusionLevels", _occlusionValueProp.floatValue, 0f, 1f);
+                float newValue = EditorGUILayout.Slider("Occlusion Level", _occlusionValueProp.floatValue, 0f, 1f);
                 bool changed = EditorGUI.EndChangeCheck();
 
                 if (changed)

@@ -1,7 +1,7 @@
 {
     "name": "com.flutu.audio",
     "version": "1.0.0",
-    "displayName": "Flutu Audio System",
+    "displayName": "Flutu Audio Occlusion",
     "description": "FMOD Studio integration for Unity. Dynamic audio occlusion with raycast-based obstacle detection, per-emitter filtering, attack/release smoothing, multi-material composition. Emitter registry, streamlined parameter handling. Production-ready for mobile and console.",
     "unity": "6000.3",
     "fmodVersion": "2.03",
